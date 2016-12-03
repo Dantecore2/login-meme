@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p #{title}
+  if(user)
+    ul
+      li
+        img(src="#{user.photo}")
+      li Bienvenido #{user.name}
+      li ID #{user.provider_id}
+      li
+        a(href='logout') Salir
+  else
+    ul
+      li
+        a(href='auth/facebook') Login con Facebook
